@@ -8,7 +8,7 @@ First Partial Project
 - Celia Lucia Castañeda Arizaga
 
 
-## Before Running the Code:
-- Have numpy and matplotlib libraries installed:
--         pip install numpy
--         pip install matplotlib
+## Running the Code:
+- Download the text file and upload it to colab.
+- Run the code in Google Colab:
+-     Input: Universe Size (Grid Size = Universe Size x Universe Size)
