@@ -87,7 +87,7 @@ def main():
     N = int(universe_size)
 
     #read file
-    file_path = 'path'
+    file_path = 'test.txt'
     w, h, gens, living_cells = input_file(file_path)
         
     # set animation update interval
