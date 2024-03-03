@@ -27,7 +27,25 @@ def update(frameNum, img, grid, N):
     # copy grid since we require 8 neighbors for calculation
     # and we go line by line 
     newGrid = grid.copy()
-    # TODO: Implement the rules of Conway's Game of Life
+    for i in range(N):
+        for j in range(N):
+            # Compute 8-neghbor sum using toroidal boundary conditions - x and y wrap around
+            # so that the simulation takes place on a toroidal surface.
+            nbs = int((grid[i, (j-1)%N] + grid[i, (j+1)%N] +
+                         grid[(i-1)%N, j] + grid[(i+1)%N, j] +
+                         grid[(i-1)%N, (j-1)%N] + grid[(i-1)%N, (j+1)%N] +
+                         grid[(i+1)%N, (j-1)%N] + grid[(i+1)%N, (j+1)%N])/255)
+            
+            # Rules
+            if grid[i, j]  == ON: #alive or not (includes rule #2 automatically)
+                # 1. if alive has less than 2 live neighbors dies, 
+                # 3. if alive has more than 3 live neighbors dies
+                if (nbs < 2) or (nbs > 3): 
+                    newGrid[i, j] = OFF
+            else:
+                # 4. if dead has exactly 3 live neighbors revives
+                if nbs == 3:
+                    newGrid[i, j] = ON
 
     # update data
     img.set_data(newGrid)
