@@ -52,6 +52,27 @@ def update(frameNum, img, grid, N):
     grid[:] = newGrid[:]
     return img,
 
+#recieve/read file
+def input_file(file_path):
+    living_cells = set()
+    with open(file_path, 'r') as file:
+        #dimensions
+        dims_line = file.readline().strip().split()
+        w, h = int(dims_line[0]), int(dims_line[1])  
+            
+        # generations
+        gens_line = file.readline().strip().split()
+        gens = int(gens_line[0])  
+            
+        # Read living cells positions
+        for line in file:
+            if line.strip():  
+                cell_info = line.strip().split()
+                x, y = int(cell_info[0]), int(cell_info[1]) 
+                living_cells.add((x, y))
+                    
+    return w, h, gens, living_cells
+
 # main() function
 def main():
     # Command line args are in sys.argv[1], sys.argv[2] ..
@@ -60,8 +81,14 @@ def main():
     parser = argparse.ArgumentParser(description="Runs Conway's Game of Life system.py.")
     # TODO: add arguments
     
-    # set grid size
-    N = 100
+    # set grid size (number input)
+    #N = 100
+    universe_size = input("universe size: ")
+    N = int(universe_size)
+
+    #read file
+    file_path = 'path'
+    w, h, gens, living_cells = input_file(file_path)
         
     # set animation update interval
     updateInterval = 50
@@ -71,8 +98,8 @@ def main():
     # populate grid with random on/off - more off than on
     grid = randomGrid(N)
     # Uncomment lines to see the "glider" demo
-    #grid = np.zeros(N*N).reshape(N, N)
-    #addGlider(1, 1, grid)
+    grid = np.zeros(N*N).reshape(N, N)
+    addGlider(1, 1, grid)
 
     # set up animation
     fig, ax = plt.subplots()
