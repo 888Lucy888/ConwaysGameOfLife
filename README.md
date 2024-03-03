@@ -8,7 +8,7 @@ First Partial Project
 - Celia Lucia Castañeda Arizaga
 
 
-#### Before Running the Code:
-- Have numpy and matplotlib libraries installed
+## Before Running the Code:
+- Have numpy and matplotlib libraries installed:
 -         pip install numpy
 -         pip install matplotlib
