@@ -10,5 +10,5 @@ First Partial Project
 
 #### Before Running the Code:
 - Have numpy and matplotlib libraries installed
-    pip install numpy
-    pip install matplotlib
+-         pip install numpy
+-         pip install matplotlib
