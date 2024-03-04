@@ -61,23 +61,19 @@ CELL_TYPES_MASKS = {
             [0, 0, 1, 0, 0],
             [0, 0, 0, 0, 0]],
 
-    "Blinker": [[[0, 0, 0, 0, 0],
-                 [0, 0, 1, 0, 0],
-                 [0, 0, 1, 0, 0],
-                 [0, 0, 1, 0, 0],
-                 [0, 0, 0, 0, 0]],
+    "Blinker": [[[0, 0, 0],
+                 [0, 1, 0],
+                 [0, 1, 0],
+                 [0, 1, 0],
+                 [0, 0, 0]],
 
                 [[0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0],
-                 [1, 1, 1, 1, 1],
-                 [0, 0, 0, 0, 0],
+                 [0, 1, 1, 1, 0],
                  [0, 0, 0, 0, 0]]],
 
     "Toad": [[[0, 0, 0, 0, 0, 0],
-              [0, 0, 0, 0, 0, 0],
               [0, 0, 1, 1, 1, 0],
               [0, 1, 1, 1, 0, 0],
-              [0, 0, 0, 0, 0, 0],
               [0, 0, 0, 0, 0, 0]],
 
             [[0, 0, 0, 0, 0, 0],
@@ -130,11 +126,9 @@ CELL_TYPES_MASKS = {
                             [0, 0, 0, 0, 0, 1, 0],
                             [0, 1, 0, 0, 0, 1, 0],
                             [0, 0, 1, 1, 1, 1, 0],
-                            [0, 0, 0, 0, 0, 0, 0],
                             [0, 0, 0, 0, 0, 0, 0]],
 
                            [[0, 0, 0, 0, 0, 0, 0],
-                            [0, 0, 0, 0, 0, 0, 0],
                             [0, 0, 0, 1, 1, 0, 0],
                             [0, 1, 1, 0, 1, 1, 0],
                             [0, 1, 1, 1, 1, 0, 0],
@@ -142,7 +136,6 @@ CELL_TYPES_MASKS = {
                             [0, 0, 0, 0, 0, 0, 0]],
 
                            [[0, 0, 0, 0, 0, 0, 0],
-                            [0, 0, 0, 0, 0, 0, 0],
                             [0, 0, 1, 1, 1, 1, 0],
                             [0, 1, 0, 0, 0, 1, 0],
                             [0, 0, 0, 0, 0, 1, 0],
@@ -154,7 +147,6 @@ CELL_TYPES_MASKS = {
                             [0, 1, 1, 1, 1, 0, 0],
                             [0, 1, 1, 0, 1, 1, 0],
                             [0, 0, 0, 1, 1, 0, 0],
-                            [0, 0, 0, 0, 0, 0, 0],
                             [0, 0, 0, 0, 0, 0, 0]]]
 }
 
@@ -309,15 +301,13 @@ def main():
                 occurrences = 0
                 if figure in singles:
                     if is_mask_present(grid, masks):
-                        print("Mask is present in the grid.")
                         occurrences += count_mask_occurrences(grid, masks)
-                        print("Number of occurrences:", occurrences)
                 else:
                     for mask in masks:
                         if is_mask_present(grid, mask):
-                            print("Mask is present in the grid.")
                             occurrences += count_mask_occurrences(grid, mask)
-                            print("Number of occurrences:", occurrences)
+                print(figure)
+                print(occurrences)
                 counted_figures[figure] = occurrences
                 total += occurrences
             file.write(f"Iteration: {i + 1}\n")
@@ -329,22 +319,6 @@ def main():
                 file.write("| {:<20} | {:<10} | {:<10.2f}% |\n".format(entity, count, percent))
             file.write("-" * 35 + "\n\n")
             update(None, img, grid, w, h)
-
-        '''
-        # Count Configs
-        for i in range(gens):
-            entity_counts = countConfigs(grid, i)
-            total_cells = sum(entity_counts.values())
-            file.write(f"Iteration: {i + 1}\n")
-            file.write("-" * 35 + "\n")
-            file.write("| {:<20} | {:<10} | {:<10} |\n".format("Entity", "Count", "Percent"))
-            file.write("-" * 35 + "\n")
-            for entity, count in entity_counts.items():
-                percent = (count / total_cells) * 100 if total_cells != 0 else 0
-                file.write("| {:<20} | {:<10} | {:<10.2f}% |\n".format(entity, count, percent))
-            file.write("-" * 35 + "\n\n")
-            update(None, img, grid, w, h)
-            '''
 
 
 

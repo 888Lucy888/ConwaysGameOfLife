@@ -1,4 +1,4 @@
-Simulation at 2024-03-03Universe size: 10 x 20
+Simulation at 2024-03-03Universe size: 20 x 20
 
 Iteration: 1
 -----------------------------------
@@ -9,10 +9,10 @@ Iteration: 1
 | Loaf                 | 0          | 0.00      % |
 | Boat                 | 0          | 0.00      % |
 | Tub                  | 0          | 0.00      % |
-| Blinker              | 0          | 0.00      % |
+| Blinker              | 1          | 50.00     % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 1          | 50.00     % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -25,10 +25,10 @@ Iteration: 2
 | Loaf                 | 0          | 0.00      % |
 | Boat                 | 0          | 0.00      % |
 | Tub                  | 0          | 0.00      % |
-| Blinker              | 0          | 0.00      % |
+| Blinker              | 1          | 50.00     % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 1          | 50.00     % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -41,10 +41,10 @@ Iteration: 3
 | Loaf                 | 0          | 0.00      % |
 | Boat                 | 0          | 0.00      % |
 | Tub                  | 0          | 0.00      % |
-| Blinker              | 0          | 0.00      % |
+| Blinker              | 1          | 50.00     % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 1          | 50.00     % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -57,10 +57,10 @@ Iteration: 4
 | Loaf                 | 0          | 0.00      % |
 | Boat                 | 0          | 0.00      % |
 | Tub                  | 0          | 0.00      % |
-| Blinker              | 0          | 0.00      % |
+| Blinker              | 1          | 50.00     % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 1          | 50.00     % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -73,10 +73,10 @@ Iteration: 5
 | Loaf                 | 0          | 0.00      % |
 | Boat                 | 0          | 0.00      % |
 | Tub                  | 0          | 0.00      % |
-| Blinker              | 0          | 0.00      % |
+| Blinker              | 1          | 50.00     % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 1          | 50.00     % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -89,10 +89,10 @@ Iteration: 6
 | Loaf                 | 0          | 0.00      % |
 | Boat                 | 0          | 0.00      % |
 | Tub                  | 0          | 0.00      % |
-| Blinker              | 0          | 0.00      % |
+| Blinker              | 1          | 50.00     % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 1          | 50.00     % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -105,10 +105,10 @@ Iteration: 7
 | Loaf                 | 0          | 0.00      % |
 | Boat                 | 0          | 0.00      % |
 | Tub                  | 0          | 0.00      % |
-| Blinker              | 0          | 0.00      % |
+| Blinker              | 1          | 50.00     % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 1          | 50.00     % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -121,10 +121,10 @@ Iteration: 8
 | Loaf                 | 0          | 0.00      % |
 | Boat                 | 0          | 0.00      % |
 | Tub                  | 0          | 0.00      % |
-| Blinker              | 0          | 0.00      % |
+| Blinker              | 1          | 50.00     % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 1          | 50.00     % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -137,10 +137,10 @@ Iteration: 9
 | Loaf                 | 0          | 0.00      % |
 | Boat                 | 0          | 0.00      % |
 | Tub                  | 0          | 0.00      % |
-| Blinker              | 0          | 0.00      % |
+| Blinker              | 1          | 50.00     % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 1          | 50.00     % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -153,10 +153,10 @@ Iteration: 10
 | Loaf                 | 0          | 0.00      % |
 | Boat                 | 0          | 0.00      % |
 | Tub                  | 0          | 0.00      % |
-| Blinker              | 0          | 0.00      % |
+| Blinker              | 1          | 50.00     % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 1          | 50.00     % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -169,10 +169,10 @@ Iteration: 11
 | Loaf                 | 0          | 0.00      % |
 | Boat                 | 0          | 0.00      % |
 | Tub                  | 0          | 0.00      % |
-| Blinker              | 0          | 0.00      % |
+| Blinker              | 1          | 100.00    % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 0          | 0.00      % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -188,7 +188,7 @@ Iteration: 12
 | Blinker              | 0          | 0.00      % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 0          | 0.00      % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -204,7 +204,7 @@ Iteration: 13
 | Blinker              | 0          | 0.00      % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 0          | 0.00      % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -220,7 +220,7 @@ Iteration: 14
 | Blinker              | 0          | 0.00      % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 0          | 0.00      % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -233,10 +233,10 @@ Iteration: 15
 | Loaf                 | 0          | 0.00      % |
 | Boat                 | 0          | 0.00      % |
 | Tub                  | 0          | 0.00      % |
-| Blinker              | 0          | 0.00      % |
+| Blinker              | 1          | 100.00    % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 0          | 0.00      % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -252,7 +252,7 @@ Iteration: 16
 | Blinker              | 0          | 0.00      % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 0          | 0.00      % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -268,7 +268,7 @@ Iteration: 17
 | Blinker              | 0          | 0.00      % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 0          | 0.00      % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
@@ -284,7 +284,7 @@ Iteration: 18
 | Blinker              | 0          | 0.00      % |
 | Toad                 | 0          | 0.00      % |
 | Beacon               | 0          | 0.00      % |
-| Glider               | 1          | 100.00    % |
+| Glider               | 0          | 0.00      % |
 | Lightweight Spaceship | 0          | 0.00      % |
 -----------------------------------
 
