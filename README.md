@@ -12,4 +12,4 @@ First Partial Project
 - Have input test case files (1.txt, 2.txt, ...) with width, height, generations and living cells
 - Run the program in terminal (py conway.py)
 - Input file path
-- Close animation window to see simulation results
+- Close animation window to see simulation results (Figures at edges will NOT be counted)
