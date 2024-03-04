@@ -1,0 +1,12 @@
+20 7 #Width Height
+25 # Generations
+4 2 # Cell (4, 2) is alive
+6 2 # Cell (6, 2) is alive
+11 4 # Cell (11, 4) is alive
+18 1 # Cell (18, 1) is alive
+15 1 # Cell (15, 1) is alive
+5 1 # Cell (5, 1) is alive
+11 6 # Cell (11, 6) is alive
+19 3 # Cell (19, 3) is alive
+13 6 # Cell (13, 6) is alive
+5 3 # Cell (5, 3) is alive
