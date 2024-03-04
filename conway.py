@@ -306,8 +306,6 @@ def main():
                     for mask in masks:
                         if is_mask_present(grid, mask):
                             occurrences += count_mask_occurrences(grid, mask)
-                print(figure)
-                print(occurrences)
                 counted_figures[figure] = occurrences
                 total += occurrences
             file.write(f"Iteration: {i + 1}\n")
