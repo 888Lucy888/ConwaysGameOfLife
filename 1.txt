@@ -1,5 +1,5 @@
 10 20 #Width Height
-200 # Generations
+20 # Generations
 2 3 # C e l l ( 2 0 , 3) i s a l i v e
 2 4 # C e l l ( 2 0 , 4) i s a l i v e
 1 2 # C e l l ( 2 0 , 4) i s a l i v e

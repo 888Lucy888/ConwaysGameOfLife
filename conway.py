@@ -94,17 +94,22 @@ def createGrid(width, height, living_cells):
         grid[cell[1]][cell[0]] = ON
     return grid
 
-def countConfigs(grid):
-    configCount = dict()
-    for cType in CELL_TYPES.keys():
-        configCount[cType] = 0;
-    for cType, coordinates in CELL_TYPES.items():
-        for x in range(grid.shape[0]):
-            for y in range(grid.shape[1]):
-                if all((x+dx, y+dy) in coordinates for dx, dy in coordinates):
-                    configCount[cType] += 1
+def countConfigs(grid, frame_num):
+    configCount = {entity: 0 for entity in CELL_TYPES.keys()}
+    
+    for entity, coordinates in CELL_TYPES.items():
+        for y in range(grid.shape[0]):
+            for x in range(grid.shape[1]):
+                entity_found = True
+                for dx, dy in coordinates:
+                    if (x + dx < 0 or x + dx >= grid.shape[1]) or (y + dy < 0 or y + dy >= grid.shape[0]) or (grid[y + dy][x + dx] != ON):
+                        entity_found = False
+                        break
+                if entity_found:
+                    configCount[entity] += 1
 
     return configCount
+
 
 # main() function
 def main():
@@ -152,17 +157,18 @@ def main():
 
         # Count Configs
         for i in range(gens):
-                entity_counts = countConfigs(grid)
-                total_cells = sum(entity_counts.values())
-                file.write(f"Iteration: {i + 1}\n")
-                file.write("-" * 35 + "\n")
-                file.write("| {:<20} | {:<10} | {:<10} |\n".format("Entity", "Count", "Percent"))
-                file.write("-" * 35 + "\n")
-                for entity, count in entity_counts.items():
-                    percent = (count / total_cells) * 100 if total_cells != 0 else 0
-                    file.write("| {:<20} | {:<10} | {:<10.2f}% |\n".format(entity, count, percent))
-                file.write("-" * 35 + "\n\n")
-                img, = update(None, img, grid, w, h)
+            entity_counts = countConfigs(grid, i)
+            total_cells = sum(entity_counts.values())
+            file.write(f"Iteration: {i + 1}\n")
+            file.write("-" * 35 + "\n")
+            file.write("| {:<20} | {:<10} | {:<10} |\n".format("Entity", "Count", "Percent"))
+            file.write("-" * 35 + "\n")
+            for entity, count in entity_counts.items():
+                percent = (count / total_cells) * 100 if total_cells != 0 else 0
+                file.write("| {:<20} | {:<10} | {:<10.2f}% |\n".format(entity, count, percent))
+            file.write("-" * 35 + "\n\n")
+            update(None, img, grid, w, h)
+
 
 
 # call main
