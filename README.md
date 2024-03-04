@@ -9,6 +9,6 @@ First Partial Project
 
 
 ## Running the Code:
-- Download the text file and upload it to colab.
-- Run the code in Google Colab:
--     Input: Universe Size (Grid Size = Universe Size x Universe Size)
+- Have numpy and matplot libraries installed (pip install library)
+- Have input files with grid width, height, generations and active cells
+- Run in terminal py conway.py
