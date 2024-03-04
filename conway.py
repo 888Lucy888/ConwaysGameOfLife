@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from datetime import datetime
 
-ON = 255
+ON = 1
 OFF = 0
 vals = [ON, OFF]
 
@@ -29,6 +29,167 @@ CELL_TYPES = {
     "Glider": [(0, 1), (1, 2), (2, 0), (2, 1), (2, 2)],
     "Lightweight Spaceship": [(0, 1), (0, 4), (1, 0), (2, 0), (3, 0), (3, 4), (4, 1), (4, 2), (4, 3), (4, 4)]
 }
+
+CELL_TYPES_MASKS = {
+    "Block": [[0, 0, 0, 0],
+              [0, 1, 1, 0],
+              [0, 1, 1, 0],
+              [0, 0, 0, 0]],
+
+    "Beehive": [[0, 0, 0, 0, 0, 0],
+                [0, 0, 1, 1, 0, 0],
+                [0, 1, 0, 0, 1, 0],
+                [0, 0, 1, 1, 0, 0],
+                [0, 0, 0, 0, 0, 0]],
+
+    "Loaf": [[0, 0, 0, 0, 0, 0],
+             [0, 0, 1, 1, 0, 0],
+             [0, 1, 0, 0, 1, 0],
+             [0, 0, 1, 0, 1, 0],
+             [0, 0, 0, 1, 0, 0],
+             [0, 0, 0, 0, 0, 0]],
+
+    "Boat": [[0, 0, 0, 0, 0],
+             [0, 1, 1, 0, 0],
+             [0, 1, 0, 1, 0],
+             [0, 0, 1, 0, 0],
+             [0, 0, 0, 0, 0]],
+
+    "Tub": [[0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 0],
+            [0, 1, 0, 1, 0],
+            [0, 0, 1, 0, 0],
+            [0, 0, 0, 0, 0]],
+
+    "Blinker": [[[0, 0, 0, 0, 0],
+                 [0, 0, 1, 0, 0],
+                 [0, 0, 1, 0, 0],
+                 [0, 0, 1, 0, 0],
+                 [0, 0, 0, 0, 0]],
+
+                [[0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0],
+                 [1, 1, 1, 1, 1],
+                 [0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0]]],
+
+    "Toad": [[[0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0],
+              [0, 0, 1, 1, 1, 0],
+              [0, 1, 1, 1, 0, 0],
+              [0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0]],
+
+            [[0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 1, 0, 0],
+            [0, 1, 0, 0, 1, 0],
+            [0, 1, 0, 0, 1, 0],
+            [0, 0, 1, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0]]],
+
+    "Beacon": [[[0, 0, 0, 0, 0, 0],
+                [0, 1, 1, 0, 0, 0],
+                [0, 1, 1, 0, 0, 0],
+                [0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 0, 0, 0]],
+
+               [[0, 0, 0, 0, 0, 0],
+                [0, 1, 1, 0, 0, 0],
+                [0, 1, 0, 0, 0, 0],
+                [0, 0, 0, 0, 1, 0],
+                [0, 0, 0, 1, 1, 0],
+                [0, 0, 0, 0, 0, 0]]],
+
+    "Glider": [[[0, 0, 0, 0, 0],
+                [0, 1, 0, 0, 0],
+                [0, 0, 1, 1, 0],
+                [0, 1, 1, 0, 0],
+                [0, 0, 0, 0, 0]],
+
+               [[0, 0, 0, 0, 0],
+                [0, 0, 1, 0, 0],
+                [0, 0, 0, 1, 0],
+                [0, 1, 1, 1, 0],
+                [0, 0, 0, 0, 0]],
+
+               [[0, 0, 0, 0, 0],
+                [0, 0, 0, 1, 0],
+                [0, 1, 0, 1, 0],
+                [0, 0, 1, 1, 0],
+                [0, 0, 0, 0, 0]],
+
+               [[0, 0, 0, 0, 0],
+                [0, 1, 0, 1, 0],
+                [0, 0, 1, 1, 0],
+                [0, 0, 1, 0, 0],
+                [0, 0, 0, 0, 0]]],
+
+"Lightweight Spaceship": [[[0, 0, 0, 0, 0, 0, 0],
+                            [0, 1, 0, 0, 1, 0, 0],
+                            [0, 0, 0, 0, 0, 1, 0],
+                            [0, 1, 0, 0, 0, 1, 0],
+                            [0, 0, 1, 1, 1, 1, 0],
+                            [0, 0, 0, 0, 0, 0, 0],
+                            [0, 0, 0, 0, 0, 0, 0]],
+
+                           [[0, 0, 0, 0, 0, 0, 0],
+                            [0, 0, 0, 0, 0, 0, 0],
+                            [0, 0, 0, 1, 1, 0, 0],
+                            [0, 1, 1, 0, 1, 1, 0],
+                            [0, 1, 1, 1, 1, 0, 0],
+                            [0, 0, 1, 1, 0, 0, 0],
+                            [0, 0, 0, 0, 0, 0, 0]],
+
+                           [[0, 0, 0, 0, 0, 0, 0],
+                            [0, 0, 0, 0, 0, 0, 0],
+                            [0, 0, 1, 1, 1, 1, 0],
+                            [0, 1, 0, 0, 0, 1, 0],
+                            [0, 0, 0, 0, 0, 1, 0],
+                            [0, 1, 0, 0, 1, 0, 0],
+                            [0, 0, 0, 0, 0, 0, 0]],
+
+                            [[0, 0, 0, 0, 0, 0, 0],
+                            [0, 0, 1, 1, 0, 0, 0],
+                            [0, 1, 1, 1, 1, 0, 0],
+                            [0, 1, 1, 0, 1, 1, 0],
+                            [0, 0, 0, 1, 1, 0, 0],
+                            [0, 0, 0, 0, 0, 0, 0],
+                            [0, 0, 0, 0, 0, 0, 0]]]
+}
+
+def count_mask_occurrences(grid, mask):
+    rows = len(grid)
+    cols = len(grid[0])
+    mask_rows = len(mask)
+    mask_cols = len(mask[0])
+    count = 0
+
+    for i in range(rows - mask_rows + 1):
+        for j in range(cols - mask_cols + 1):
+            # Extract subgrid
+            subgrid = [row[j:j+mask_cols] for row in grid[i:i+mask_rows]]
+            subgrid_list = [list(row) for row in subgrid]
+            if subgrid_list == mask:
+                count += 1
+
+    return count
+
+def is_mask_present(grid, mask):
+    rows = len(grid)
+    cols = len(grid[0])
+    mask_rows = len(mask)
+    mask_cols = len(mask[0])
+
+    for i in range(rows - mask_rows + 1):
+        for j in range(cols - mask_cols + 1):
+            # Extract subgrid
+            subgrid = [row[j:j+mask_cols] for row in grid[i:i+mask_rows]]
+            # Check if subgrid matches the mask
+            if np.array_equal(subgrid, mask):  # Use np.array_equal() for array comparison
+                return True
+
+    return False
 
 def randomGrid(N):
     """returns a grid of NxN random values"""
@@ -94,22 +255,6 @@ def createGrid(width, height, living_cells):
         grid[cell[1]][cell[0]] = ON
     return grid
 
-def countConfigs(grid, frame_num):
-    configCount = {entity: 0 for entity in CELL_TYPES.keys()}
-    
-    for entity, coordinates in CELL_TYPES.items():
-        for y in range(grid.shape[0]):
-            for x in range(grid.shape[1]):
-                entity_found = True
-                for dx, dy in coordinates:
-                    if (x + dx < 0 or x + dx >= grid.shape[1]) or (y + dy < 0 or y + dy >= grid.shape[0]) or (grid[y + dy][x + dx] != ON):
-                        entity_found = False
-                        break
-                if entity_found:
-                    configCount[entity] += 1
-
-    return configCount
-
 
 # main() function
 def main():
@@ -149,12 +294,43 @@ def main():
     print(f"Simulation at {current_date}")
     print(f"Universe size: {w} x {h}\n\n Results in simulation_results_{current_date}.txt")
 
+    singles = ["Block", "Beehive", "Loaf", "Boat", "Tub"]
+
     #file
     output_file = "simulation_results_"+current_date+".txt"
     with open(output_file, 'w') as file:
         file.write(f"Simulation at {current_date}")
         file.write(f"Universe size: {w} x {h}\n\n")
 
+        for i in range(gens):
+            total = 0
+            counted_figures = {}
+            for figure, masks in CELL_TYPES_MASKS.items():
+                occurrences = 0
+                if figure in singles:
+                    if is_mask_present(grid, masks):
+                        print("Mask is present in the grid.")
+                        occurrences += count_mask_occurrences(grid, masks)
+                        print("Number of occurrences:", occurrences)
+                else:
+                    for mask in masks:
+                        if is_mask_present(grid, mask):
+                            print("Mask is present in the grid.")
+                            occurrences += count_mask_occurrences(grid, mask)
+                            print("Number of occurrences:", occurrences)
+                counted_figures[figure] = occurrences
+                total += occurrences
+            file.write(f"Iteration: {i + 1}\n")
+            file.write("-" * 35 + "\n")
+            file.write("| {:<20} | {:<10} | {:<10} |\n".format("Entity", "Count", "Percent"))
+            file.write("-" * 35 + "\n")
+            for entity, count in counted_figures.items():
+                percent = (count / total) * 100 if total != 0 else 0
+                file.write("| {:<20} | {:<10} | {:<10.2f}% |\n".format(entity, count, percent))
+            file.write("-" * 35 + "\n\n")
+            update(None, img, grid, w, h)
+
+        '''
         # Count Configs
         for i in range(gens):
             entity_counts = countConfigs(grid, i)
@@ -168,6 +344,7 @@ def main():
                 file.write("| {:<20} | {:<10} | {:<10.2f}% |\n".format(entity, count, percent))
             file.write("-" * 35 + "\n\n")
             update(None, img, grid, w, h)
+            '''
 
 
 
