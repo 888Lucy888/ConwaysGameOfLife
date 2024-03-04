@@ -11,6 +11,7 @@ import sys, argparse
 import numpy as np
 import matplotlib.pyplot as plt 
 import matplotlib.animation as animation
+from datetime import datetime
 
 ON = 255
 OFF = 0
@@ -138,13 +139,15 @@ def main():
                                   save_count=50)
     plt.show()
 
-    print("Simulation at 2024-03-03")
-    print(f"Universe size: {w} x {h}\n\n Results in simulation_results.txt")
+    current_date = datetime.now().strftime("%Y-%m-%d")
+
+    print(f"Simulation at {current_date}")
+    print(f"Universe size: {w} x {h}\n\n Results in simulation_results_{current_date}.txt")
 
     #file
-    output_file = "simulation_results.txt"
+    output_file = "simulation_results_"+current_date+".txt"
     with open(output_file, 'w') as file:
-        file.write("Simulation at 2024-03-03")
+        file.write(f"Simulation at {current_date}")
         file.write(f"Universe size: {w} x {h}\n\n")
 
         # Count Configs
